@@ -15,6 +15,8 @@ namespace ImageResizer.Helpsers
     {
         public Image ResizeImage(Image image, int maxWidth, int maxHeight)
         {
+            if (image == null) return null;
+
             var width = (double)maxWidth / image.Width;
             var height = (double)maxHeight / image.Height;
             var ratio = Math.Min(width, height);
@@ -33,7 +35,7 @@ namespace ImageResizer.Helpsers
         public bool IsImage(string imageName)
         {
             var validExtensions = new List<string> { "jpg", "gif", "png", "jpeg" };
-            return validExtensions.Any(x => imageName.ToLower().EndsWith(x.ToLower()));
+            return imageName != null && validExtensions.Any(x => imageName.ToLower().EndsWith(x.ToLower()));
         }
     }
 }

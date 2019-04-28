@@ -52,10 +52,10 @@ namespace ImageResizer.Controllers
 
         private void Resize(Image image, int width, int height)
         {
-            var imageResized50x50 = _imageHelper.ResizeImage(image, width, height);
+            var imageResized = _imageHelper.ResizeImage(image, width, height);
             var imageName = $"resizedImageName{width}x{height}";
             var imageResizedPath = Path.Combine(Server.MapPath(_imageFolder), imageName + _imageExtention);
-            imageResized50x50.Save(imageResizedPath);
+            imageResized.Save(imageResizedPath);
             ViewData[imageName] = $"/Images/{imageName}{_imageExtention}";
         }
     }
