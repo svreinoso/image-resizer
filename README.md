@@ -6,4 +6,4 @@
 
 ## Moq and TestFramework for test 
 
-This project demostrate how to resize and image with an .net mvc project 
+This project demonstrate how to resize and image with an .net mvc project 
